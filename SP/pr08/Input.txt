@@ -1,0 +1,15 @@
+Donon   Jenkin  1983    100 6.16
+Robert  Shaw    1985    100 6.32
+Andrew	Wilson  1985    100 5.88
+Keneth  Morgan  1988    100 5.26
+Jason	Taylor  1989    100 5.47
+John	Hudson  1993    100 5.78
+Alex	Allen   1994    100 6.99
+Ronald	Gray    1994    100 6.56
+Richar  Wells   1994    100 5.12
+James	Carrol  1997    100 5.90
+Louis	Rice    2004    100 6.17
+Michel  West    2007    100 6.24
+Ralph	Miller  2008    100 6.52
+Wiliam  Colon   2009    100 6.59
+Timoty  Smith   2012    100 5.36

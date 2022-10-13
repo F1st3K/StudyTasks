@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+    color:rgb(85, 253, 253);
+    border-color:darkgrey;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(32, 32, 32);
+}
+button{
+    background-color: rgb(32, 32, 32);
+    width: 10em;
+}
+input{
+    background-color: rgb(32, 32, 32);
+    height: 50px;
+}
+#bg {
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left:0; 
+    width: 100%;
+    margin:0;
+}
+.info{
+    display: flexbox;
+    background-color: rgb(32, 32, 32);
+    max-width: 20em;
+    border-color:darkgrey;
+    border-radius: 3px;
+}

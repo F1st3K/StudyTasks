@@ -1,0 +1,198 @@
+header{
+    display: flex;
+    color: aliceblue;
+    background-color: rgb(58, 58, 58);
+    font-size: 45px;
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: first;
+    grid-row-end: body;
+}
+nav{
+    background-color:rgb(58, 58, 58);
+    grid-column-start: start;
+    grid-column-end: main;
+    grid-row-start: body;
+    grid-row-end: footer;
+    color: aliceblue;
+    
+}
+
+nav li:hover {
+    background: rgb(153, 153, 153);
+    width: auto;
+}
+main{
+    font-size: 25px;
+    margin: 15px;
+}
+aside{
+    background-color: rgb(0, 0, 0);
+    grid-column-start: aside;
+    grid-column-end: end;
+    grid-row-start: body;
+    grid-row-end: footer;
+}
+footer{
+    background-color: rgb(100, 100, 100);
+    font-size: 16px;
+    color: aliceblue;
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: footer;
+    grid-row-end: last;
+}
+body{
+    background-color: rgb(216, 216, 216);
+    width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+    grid-template-columns: [start] 200px [main] 1fr [aside] 240px [end];
+	grid-template-rows: [first] 200px [body] 1fr [footer] 100px [last];
+}
+#as{
+    max-width: 240px;
+}
+#ap{
+    float: left;
+   height: 400px;
+   max-width: 200px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px){
+	body {
+        grid-template-columns: [start] 200px [main] 1fr [aside] 240px [end];
+        grid-template-rows: [first] 200px [body] 1fr [footer] 100px [last];
+	}
+	header{
+		grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: body;
+	}
+	nav{
+		grid-column-start: start;
+        grid-column-end: main;
+        grid-row-start: body;
+        grid-row-end: footer;
+        display: flex;
+	}
+    aside{
+        background-color: rgb(0, 0, 0);
+        grid-column-start: aside;
+        grid-column-end: end;
+        grid-row-start: body;
+        grid-row-end: footer;
+    }
+	main{
+		grid-column-start: main;
+		grid-column-end: aside;
+	}
+}
+@media screen and (min-width: 800px) and (max-width: 1023px){
+    body {
+        grid-template-columns: [start] 200px [main] 1fr [aside] 240px [end];
+        grid-template-rows: [first] 200px [body] 175px [nav] 1fr [footer] 100px [last];
+	}
+	header{
+		grid-column-start: start;
+        grid-column-end: aside;
+        grid-row-start: first;
+        grid-row-end: body;
+	}
+	nav{
+		grid-column-start: start;
+        grid-column-end: aside;
+        grid-row-start: body;
+        grid-row-end: nav;
+	}
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+    nav li{
+        margin: 30px;
+    }
+    aside{
+        background-color: rgb(0, 0, 0);
+        grid-column-start: aside;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: nav;
+    }
+	main{
+		grid-column-start: start;
+		grid-column-end: end;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 799px){
+    body {
+        grid-template-columns: [start] 120px [main] 1fr [aside] 240px [end];
+        grid-template-rows: [first] 200px [body] 50px [nav] 1fr [footer] 100px [last];
+	}
+	header{
+		grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: body;
+	}
+	nav{
+		grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: body;
+        grid-row-end: nav;
+	}
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    nav li{
+        margin-inline: 20px;
+    }
+    #cat{
+        width: 50%;
+    }
+    aside{
+        display: none;
+    }
+	main{
+		grid-column-start: start;
+		grid-column-end: end;
+	}
+}
+@media screen and (max-width: 480px){
+    body {
+        grid-template-columns: [start] 120px [main] 1fr [aside] 240px [end];
+        grid-template-rows: [first] 70px [body] 50px [nav] 1fr [footer] 100px [last];
+	}
+	header{
+		grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: first;
+        grid-row-end: body;
+        font-size: 30px;
+	}
+	nav{
+		grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: body;
+        grid-row-end: nav;
+	}
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    nav li{
+        margin-inline: 20px;
+    }
+    aside{
+        display: none;
+    }
+	main{
+		grid-column-start: start;
+		grid-column-end: end;
+	}
+}
+

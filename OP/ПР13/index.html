@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<title>ПР13</title>
+	<link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <generic>
+        <element>
+            <img src="image/pass.png">
+        </element>
+            <input type="button" onclick="start()" value="старт">
+            <input type="button" onclick="stop()" value="стоп">
+            <table>
+                <tr>
+                    <td>Обьекты</td>    <td>Белые бабочки</td>  <td>Красные бабочки</td><td>Желтые бабочки</td> <td>Красные индейцы</td>
+                </tr>
+                <tr>
+                    <td>Количество</td> <td><p id="white">0</p></td> <td><p id="red">0</p></td> <td><p id="yellow">0</p></td> <td><p id="indees">0</p></td>
+                </tr>
+                <tr><td><p>Модальное время: </p></td><td><p id="time"></p></td></tr>
+                </table>
+    </generic>
+    <queue>
+        <div class="items" id="it0"><img src="image/pass.png"></div>
+        <div class="items" id="it1"><img src="image/pass.png"></div>
+        <div class="items" id="it2"><img src="image/pass.png"></div>
+        <div class="items" id="it3"><img src="image/pass.png"></div>
+        <div class="items" id="it4"><img src="image/pass.png"></div>
+        <div class="items" id="it5"><img src="image/pass.png"></div>
+        <div class="items" id="it6"><img src="image/pass.png"></div>
+        <div class="items" id="it7"><img src="image/pass.png"></div>
+    </queue>
+    <img src="image/fon.jpg" id="bg">
+</body>

@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    color:azure;
+    border-color:darkgrey;
+}
+body{
+    background-color: rgb(32, 32, 32);
+}
+#Messages{
+    width: 480px;    
+    height: 400px; 
+    display: inline-block;  
+    overflow-x: hidden; 
+    padding-top: 1px;
+    border-radius: 3px;
+    color:azure;
+}
+.sender1{
+    background-color: rgb(138, 43, 226);
+    float:left;
+}
+.sender2{
+    background-color:rgb(100, 149, 237);
+    float:right;
+}
+#sender1{
+    height: 60px;
+    width: 240px;
+    border-color: rgb(138, 43, 226);
+}
+#sender2{
+    height: 60px;
+    width: 240px;
+    border-color:rgb(100, 149, 237);
+}
+input{
+    background-color: darkgray;
+}

@@ -1,0 +1,96 @@
+*{
+    max-width: 1280px;
+    margin: 0px;
+    
+}
+#bg {
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left:0; 
+    min-width:1280px;
+    min-height:100%;
+}
+body {
+    color:azure;
+    display: grid;
+  }
+content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 480px;
+
+}
+header{
+    background-color: black;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+.link {
+    margin-inline: 10px;
+}
+.pageHead{grid-area: header;}
+info{
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: auto;
+
+}
+.mainInfo{grid-area: info;}
+login{
+    display: flex;
+    background-color: rgb(223, 223, 223);
+    font-size: 30px;
+    color:black;
+    flex-direction:row;
+    justify-content: space-around;
+}
+.mainLog{grid-area: login;}
+footer{
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(206, 206, 206);
+}
+.pageFoot{grid-area: footer;}
+#logo {
+    width: 100px;
+    height: 100px;
+}
+#name {
+    width: 120px;
+    height: 120px;
+}
+.pict{
+    width: 70px;
+    height: 70px;
+}
+#media{
+    display: flex;
+    justify-content: space-around;
+}
+#tagline{
+    font-size: 40px;
+}
+#other_text{
+    font-size: 20px;
+}
+#media_text{
+    font-size: 20px;
+    
+}
+#link_down{
+    width: 135px;
+    height: 40px;
+}

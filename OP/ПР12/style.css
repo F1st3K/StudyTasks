@@ -1,0 +1,46 @@
+*{
+    margin:0;
+}
+.items{
+    width: 120px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+}
+element{
+    width: 400px;
+    height: 300px;
+    display: flex;
+}
+body{
+	display: grid; 
+    grid-template-columns: [start] 2fr [gen] 1fr [p1] 2fr [que] 2fr [end];
+    grid-template-rows: [start] 1fr [end];
+}
+generic{
+    grid-column-start: start;
+    grid-column-end: gen;
+}
+generic input{
+    background-color: rgb(0, 0, 0);
+    color: rgb(131, 131, 131);
+    width: 180px;
+    height: 50px;
+    margin: 2px;
+}
+queue{
+    grid-column-start: p1;
+    grid-column-end: que;
+}
+stac{
+    grid-column-start: que;
+    grid-column-end: end;
+}
+#bg {
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left:0; 
+    min-width:100%;
+    min-height:100%;
+}

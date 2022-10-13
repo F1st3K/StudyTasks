@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>result007</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <?php
+
+        function TransformUnderUpperCase($str)
+        {
+            $first_lower = mb_convert_case(mb_substr($str, 0, 3), MB_CASE_LOWER);
+            $last_upper = mb_convert_case(substr($str,-3), MB_CASE_UPPER);
+            $result = $first_lower . $last_upper;
+            return $result;
+        }
+
+        function LetterCountP($str)
+        {
+            
+            $result = substr_count($str, 'p');
+            return $result;
+        }
+
+            $name = $_POST['name'];
+            $res1 = TransformUnderUpperCase($name);
+            
+            $passwd = $_POST['passwd'];
+            $res2 = LetterCountP($passwd);
+
+            echo "1)".$res1;
+            echo "<br>";
+            echo "2)".$res2;
+        {
+            setcookie("Server", 'text', time()+60*60);
+        }
+        ?>
+      <div>
+            <table>
+                <tr>
+                    <td>№</td>
+                    <td>Параметр</td>
+                    <td>Значение</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Метод</td>
+                    <td><?php echo $_SERVER['REQUEST_METHOD'];?></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ip-адрес</td>
+                    <td><?php echo $_SERVER['SERVER_ADDR'];?></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Переход</td>
+                    <td><?php echo $_SERVER['HTTP_REFERER'];?></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Путь к скрипту</td>
+                    <td><?php echo $_SERVER['SCRIPT_FILENAME'];?></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Cookies</td>
+                    <td><?php echo $_SERVER['HTTP_COOKIE'];?></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </body>
+    

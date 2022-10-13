@@ -1,0 +1,20 @@
+#wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items: center;
+}
+#logo{
+	height: 250px;
+}
+table { 
+    margin: auto;
+    width: 95%; 
+    border-collapse: 
+    collapse;
+}
+
+th, td { 
+    padding: 10px; 
+    border: thin solid rgba(0,0,0, 0.3);
+ }
