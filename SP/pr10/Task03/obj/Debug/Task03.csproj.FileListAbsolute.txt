@@ -1,8 +1,0 @@
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\bin\Debug\Task03.exe.config
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\bin\Debug\Task03.exe
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\bin\Debug\Task03.pdb
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\obj\Debug\Task03.csproj.AssemblyReference.cache
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\obj\Debug\Task03.csproj.SuggestedBindingRedirects.cache
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\obj\Debug\Task03.csproj.CoreCompileInputs.cache
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\obj\Debug\Task03.exe
-C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr10\Task03\obj\Debug\Task03.pdb
