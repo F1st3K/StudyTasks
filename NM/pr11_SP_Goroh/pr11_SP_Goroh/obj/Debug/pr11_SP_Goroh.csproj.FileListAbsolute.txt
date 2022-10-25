@@ -1,0 +1,8 @@
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\bin\Debug\pr11_SP_Goroh.exe.config
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\bin\Debug\pr11_SP_Goroh.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\bin\Debug\pr11_SP_Goroh.pdb
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\obj\Debug\pr11_SP_Goroh.csproj.AssemblyReference.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\obj\Debug\pr11_SP_Goroh.csproj.SuggestedBindingRedirects.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\obj\Debug\pr11_SP_Goroh.csproj.CoreCompileInputs.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\obj\Debug\pr11_SP_Goroh.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\NM\pr11_SP_Goroh\pr11_SP_Goroh\obj\Debug\pr11_SP_Goroh.pdb
