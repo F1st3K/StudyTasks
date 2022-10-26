@@ -61,28 +61,33 @@ namespace pr12
             try
             {
                 Console.WriteLine("Task02--------------------------------------------------------");
-                int Number, Result;
-                int Mull = 0;
-                int[] mass = new int[4];
+                int LowValue = 0, Number = 5, Result;
+                int Mull = 1;
+                int[] mass = new int[Number];
 
-                Console.WriteLine("Number: ");
-                Number = Convert.ToInt32(Console.ReadLine());
-                if (Number < 1000 || Number >= 10000)
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    Console.WriteLine("Number not 4value");
-                    goto Task02;
+                    mass[i] = Convert.ToInt32(Console.ReadLine());
+                    if (mass[i] <= 0)
+                    {
+                        Console.WriteLine("Number low null");
+                        goto Task02;
+                    }
                 }
-
-                for (int i = 0, j = 1000; i < 4; i++, j /= 10)
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    mass[i] = (Number / j) % 10;
+                    for (int j = 0; j < mass.Length; j++)
+                    {
+                        if (mass[i] < mass[j])
+                        {
+                            LowValue = mass[i];
+                            mass[i] = mass[j];
+                            mass[j] = LowValue;
+                        }
+                    }
                 }
-
-                for (int i = 0; i < 4; i++)
-                {
-                    Summ += mass[i];
-                }
-                Result = (Summ) - (mass[0] * mass[3]);
+                Mull = mass[0] * mass[1]; 
+                Result = Mull;
                 Console.WriteLine("Result: " + Result);
                 Console.ReadKey();
             }
@@ -98,24 +103,47 @@ namespace pr12
             try
             {
                 Console.WriteLine("Task03--------------------------------------------------------");
-                int Number;
-                bool Result;
-                int[] mass = new int[4];
-
-                Console.WriteLine("Number: ");
-                Number = Convert.ToInt32(Console.ReadLine());
-                if (Number < 1000 || Number >= 10000)
+                int Switch = 0, Result;
+                int Number = Convert.ToInt32(Console.ReadLine());
+                if (Number <= 0)
                 {
-                    Console.WriteLine("Number not 4value");
+                    Console.WriteLine("Number low null");
                     goto Task03;
                 }
+                int[] mass = new int[Number];
 
-                for (int i = 0, j = 1000; i < 4; i++, j /= 10)
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    mass[i] = (Number / j) % 10;
+                    mass[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
-                Result = (mass[0] * mass[1]) == (mass[2] * mass[3]);
+                if (mass[0] % 2 != 0)
+                    Switch = 1;
+                else if (mass[0] % 2 == 0)
+                    Switch = 2;
+
+                for (int i = 1; i < mass.Length; i++)
+                {
+                    if (Switch == 1)
+                    {
+                        if (mass[i] % 2 != 0)
+                        {
+                            Console.WriteLine("Eror in " + i + 1);
+                            return;
+                        }
+                        Switch = 2;
+                    }
+                    else if (Switch == 2)
+                    {
+                        if (mass[i] % 2 == 0)
+                        {
+                            Console.WriteLine("Eror in " + i + 1);
+                            return;
+                        }
+                        Switch = 2;
+                    }
+                }
+                Result = 0;
                 Console.WriteLine("Result: " + Result);
                 Console.ReadKey();
             }
@@ -131,23 +159,28 @@ namespace pr12
             try
             {
                 Console.WriteLine("Task04--------------------------------------------------------");
-                double A, B, C;
-                bool Result;
-                double x1, x2;
-
-                Console.WriteLine("Number: ");
-                A = Convert.ToDouble(Console.ReadLine());
-                B = Convert.ToDouble(Console.ReadLine());
-                C = Convert.ToDouble(Console.ReadLine());
-                if (A == 0)
+                int Summ = 0, Mull = 1;
+                string Result;
+                int Number = Convert.ToInt32(Console.ReadLine());
+                if (Number <= 0)
                 {
-                    Console.WriteLine("A not null");
+                    Console.WriteLine("Number low null");
                     goto Task04;
                 }
+                int[] mass = new int[Number];
 
-                x1 = (-B + Math.Sqrt(B * B - 4 * A * C)) / (2 * A);
-                x2 = (-B - Math.Sqrt(B * B - 4 * A * C)) / (2 * A);
-                Result = (x1 == x2);
+                for (int i = 0; i < mass.Length; i++)
+                {
+                    mass[i] = Convert.ToInt32(Console.ReadLine());
+                }
+
+                for (int i = 0; i < mass.Length; i++)
+                {
+                    Summ += mass[i];
+                    Mull *= mass[i];
+                }
+
+                Result = ("Summ = "+Summ+"; Mull = "+Mull+";");
                 Console.WriteLine("Result: " + Result);
                 Console.ReadKey();
             }
@@ -163,46 +196,31 @@ namespace pr12
             try
             {
                 Console.WriteLine("Task05--------------------------------------------------------");
-                int Age;
-                string Result = "";
-                Console.WriteLine("Age: ");
-                Age = Convert.ToInt32(Console.ReadLine());
-                if (Age < 20 || Age > 69)
+                int Result = 0;
+                int Number = Convert.ToInt32(Console.ReadLine());
+                if (Number <= 0)
                 {
-                    Console.WriteLine("Age is not 20 ~ 69 !!!");
+                    Console.WriteLine("Number low null");
                     goto Task05;
                 }
-                switch (Age / 10)
+                int[] mass = new int[Number];
+
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    case 2: { Result += "Двадцать "; } break;
-                    case 3: { Result += "Тридцать "; } break;
-                    case 4: { Result += "Сорок "; } break;
-                    case 5: { Result += "Пятьдесят "; } break;
-                    case 6: { Result += "Шестьдесят "; } break;
-                    default:
-                        break;
+                    mass[i] = Convert.ToInt32(Console.ReadLine());
                 }
-                switch (Age % 10)
+
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    case 0: { Result += ""; } break;
-                    case 1: { Result += "один "; } break;
-                    case 2: { Result += "два "; } break;
-                    case 3: { Result += "три "; } break;
-                    case 4: { Result += "четыре "; } break;
-                    case 5: { Result += "пять "; } break;
-                    case 6: { Result += "шесть "; } break;
-                    case 7: { Result += "семь "; } break;
-                    case 8: { Result += "восемь "; } break;
-                    case 9: { Result += "девять "; } break;
-                    default:
-                        break;
+                    int counter = 0;
+                    for (int j = 0; j < mass.Length; j++)
+                    {
+                        if (mass[i] == mass[j])
+                            counter++;
+                    }
+                    if (counter == 1)
+                        Result++;
                 }
-                if (Age % 10 > 1 && Age % 10 < 5)
-                    Result += "года";
-                else if (Age % 10 == 1)
-                    Result += "год";
-                else
-                    Result += "лет";
 
                 Console.WriteLine("Result: " + Result);
                 Console.ReadKey();
