@@ -1,0 +1,8 @@
+C:\Users\-F1st3k\source\repos\pr13\pr13\bin\Debug\pr13.exe.config
+C:\Users\-F1st3k\source\repos\pr13\pr13\bin\Debug\pr13.exe
+C:\Users\-F1st3k\source\repos\pr13\pr13\bin\Debug\pr13.pdb
+C:\Users\-F1st3k\source\repos\pr13\pr13\obj\Debug\pr13.csproj.AssemblyReference.cache
+C:\Users\-F1st3k\source\repos\pr13\pr13\obj\Debug\pr13.csproj.SuggestedBindingRedirects.cache
+C:\Users\-F1st3k\source\repos\pr13\pr13\obj\Debug\pr13.csproj.CoreCompileInputs.cache
+C:\Users\-F1st3k\source\repos\pr13\pr13\obj\Debug\pr13.exe
+C:\Users\-F1st3k\source\repos\pr13\pr13\obj\Debug\pr13.pdb
