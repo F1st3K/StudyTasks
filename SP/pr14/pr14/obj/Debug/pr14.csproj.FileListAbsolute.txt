@@ -1,0 +1,11 @@
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\bin\Debug\pr14.exe.config
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\bin\Debug\pr14.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\bin\Debug\pr14.pdb
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.csproj.AssemblyReference.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.csproj.SuggestedBindingRedirects.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.Form1.resources
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.Properties.Resources.resources
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.csproj.GenerateResource.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.csproj.CoreCompileInputs.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr14\pr14\obj\Debug\pr14.pdb
