@@ -1,0 +1,8 @@
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\bin\Debug\pr15.exe.config
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\bin\Debug\pr15.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\bin\Debug\pr15.pdb
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\obj\Debug\pr15.csproj.AssemblyReference.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\obj\Debug\pr15.csproj.SuggestedBindingRedirects.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\obj\Debug\pr15.csproj.CoreCompileInputs.cache
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\obj\Debug\pr15.exe
+C:\Users\-F1st3k\source\repos\StudyTasks\SP\pr15\pr15\obj\Debug\pr15.pdb
