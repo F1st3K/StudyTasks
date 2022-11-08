@@ -22,7 +22,10 @@ namespace pr15
     {
         static void Main(string[] args)
         {
+            Task01();
+            Task02();
             Task03();
+            Task04();
             Console.ReadKey();
         }
 
@@ -33,6 +36,13 @@ namespace pr15
                 string pathInput = "Input1.txt";
                 string pathOutput = "Output1.txt";
                 string[] strings = File.ReadAllLines(pathInput);
+
+                if (strings.Length <= 0)
+                {
+                    Console.WriteLine("в файле *Пусто*");
+                    return;
+                }
+
                 int Number = Convert.ToInt32(strings[0]);
                 bool Result = false;
 
@@ -60,6 +70,13 @@ namespace pr15
                 string pathInput = "Input2.txt";
                 string pathOutput = "Output2.txt";
                 string[] strings = File.ReadAllLines(pathInput);
+
+                if (strings.Length <= 0)
+                {
+                    Console.WriteLine("в файле *Пусто*");
+                    return;
+                }
+
                 int Number = Convert.ToInt32(strings[0]);
                 int Result = 0;
 
@@ -155,6 +172,12 @@ namespace pr15
                 string Sentence = File.ReadAllText(pathInput);
                 int MullResult = 1;
                 bool IsMullable = false;
+
+                if (Sentence.Length <= 0)
+                {
+                    Console.WriteLine("в файле *Пусто*");
+                    return;
+                }
 
                 for (int i = 0; i < Sentence.Length; i++)
                 {
