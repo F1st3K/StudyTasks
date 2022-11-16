@@ -16,7 +16,7 @@ namespace pr06
         public ViewForm()
         {
             InitializeComponent();
-            const string connectionString = "host='localhost';database='mydb';uid='root';pwd='';";
+            const string connectionString = "host='localhost';database='mydb';uid='root';pwd='';charset=utf8;";
             MySqlConnecter = new MySqlConnecter(connectionString);
         }
 
@@ -34,54 +34,26 @@ namespace pr06
 
         private void coursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM courses;";
-            try
-            {
-                dataGridView.DataSource =  MySqlConnecter.ReturnQueryTable(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Внимание!\n" + query + " - некоректный запрос!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            string tableName = "courses";
+            dataGridView.DataSource =  MySqlConnecter.QueryReturnTable(tableName);
         }
 
         private void lecturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM lecturers;";
-            try
-            {
-                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Внимание!\n" + query + " - некоректный запрос!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            string tableName = "lecturers";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
         }
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM klients;";
-            try
-            {
-                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Внимание!\n" + query + " - некоректный запрос!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            string tableName = "klients";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
         }
 
         private void studyRoomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM studyrooms;";
-            try
-            {
-                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Внимание!\n" + query + " - некоректный запрос!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            string tableName = "studyrooms";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
         }
     }
 }

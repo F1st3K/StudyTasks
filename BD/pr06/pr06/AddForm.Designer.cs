@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox textBoxAddSelectStudyRoom;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxAddKlientDOB = new System.Windows.Forms.TextBox();
             this.textBoxAddKlientName = new System.Windows.Forms.TextBox();
             this.tabPageLecturers = new System.Windows.Forms.TabPage();
             this.buttonAddLecturer = new System.Windows.Forms.Button();
@@ -66,8 +64,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAddCourseName = new System.Windows.Forms.TextBox();
             this.tabControlAdd = new System.Windows.Forms.TabControl();
-            this.textBoxAddSelectLecture = new System.Windows.Forms.ComboBox();
-            textBoxAddSelectStudyRoom = new System.Windows.Forms.ComboBox();
+            this.AddSelectLecture = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerAddKlientDOB = new System.Windows.Forms.DateTimePicker();
+            this.AddSelectStudyRoom = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabPageStudyRooms.SuspendLayout();
             this.tabPageKlients.SuspendLayout();
@@ -98,7 +97,7 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.backToolStripMenuItem.Text = "назад";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
@@ -145,6 +144,7 @@
             this.buttonAddStudyRoom.TabIndex = 13;
             this.buttonAddStudyRoom.Text = "Добавить";
             this.buttonAddStudyRoom.UseVisualStyleBackColor = true;
+            this.buttonAddStudyRoom.Click += new System.EventHandler(this.buttonAddStudyRoom_Click);
             // 
             // label10
             // 
@@ -196,13 +196,13 @@
             // 
             // tabPageKlients
             // 
+            this.tabPageKlients.Controls.Add(this.dateTimePickerAddKlientDOB);
             this.tabPageKlients.Controls.Add(this.radioButtonGenderWoman);
             this.tabPageKlients.Controls.Add(this.radioButtonGenderMan);
             this.tabPageKlients.Controls.Add(this.buttonAddKlient);
             this.tabPageKlients.Controls.Add(this.label7);
             this.tabPageKlients.Controls.Add(this.label8);
             this.tabPageKlients.Controls.Add(this.label9);
-            this.tabPageKlients.Controls.Add(this.textBoxAddKlientDOB);
             this.tabPageKlients.Controls.Add(this.textBoxAddKlientName);
             this.tabPageKlients.Location = new System.Drawing.Point(4, 25);
             this.tabPageKlients.Name = "tabPageKlients";
@@ -217,10 +217,10 @@
             this.radioButtonGenderWoman.AutoSize = true;
             this.radioButtonGenderWoman.Location = new System.Drawing.Point(482, 253);
             this.radioButtonGenderWoman.Name = "radioButtonGenderWoman";
-            this.radioButtonGenderWoman.Size = new System.Drawing.Size(56, 20);
+            this.radioButtonGenderWoman.Size = new System.Drawing.Size(53, 20);
             this.radioButtonGenderWoman.TabIndex = 15;
             this.radioButtonGenderWoman.TabStop = true;
-            this.radioButtonGenderWoman.Text = "жен.";
+            this.radioButtonGenderWoman.Text = "жен";
             this.radioButtonGenderWoman.UseVisualStyleBackColor = true;
             // 
             // radioButtonGenderMan
@@ -228,10 +228,10 @@
             this.radioButtonGenderMan.AutoSize = true;
             this.radioButtonGenderMan.Location = new System.Drawing.Point(400, 253);
             this.radioButtonGenderMan.Name = "radioButtonGenderMan";
-            this.radioButtonGenderMan.Size = new System.Drawing.Size(57, 20);
+            this.radioButtonGenderMan.Size = new System.Drawing.Size(54, 20);
             this.radioButtonGenderMan.TabIndex = 14;
             this.radioButtonGenderMan.TabStop = true;
-            this.radioButtonGenderMan.Text = "муж.";
+            this.radioButtonGenderMan.Text = "муж";
             this.radioButtonGenderMan.UseVisualStyleBackColor = true;
             // 
             // buttonAddKlient
@@ -242,6 +242,7 @@
             this.buttonAddKlient.TabIndex = 13;
             this.buttonAddKlient.Text = "Добавить";
             this.buttonAddKlient.UseVisualStyleBackColor = true;
+            this.buttonAddKlient.Click += new System.EventHandler(this.buttonAddKlient_Click);
             // 
             // label7
             // 
@@ -269,13 +270,6 @@
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 10;
             this.label9.Text = "ФИО: ";
-            // 
-            // textBoxAddKlientDOB
-            // 
-            this.textBoxAddKlientDOB.Location = new System.Drawing.Point(289, 196);
-            this.textBoxAddKlientDOB.Name = "textBoxAddKlientDOB";
-            this.textBoxAddKlientDOB.Size = new System.Drawing.Size(350, 22);
-            this.textBoxAddKlientDOB.TabIndex = 9;
             // 
             // textBoxAddKlientName
             // 
@@ -309,6 +303,7 @@
             this.buttonAddLecturer.TabIndex = 13;
             this.buttonAddLecturer.Text = "Добавить";
             this.buttonAddLecturer.UseVisualStyleBackColor = true;
+            this.buttonAddLecturer.Click += new System.EventHandler(this.buttonAddLecturer_Click);
             // 
             // label4
             // 
@@ -360,8 +355,8 @@
             // 
             // tabPageCourses
             // 
-            this.tabPageCourses.Controls.Add(textBoxAddSelectStudyRoom);
-            this.tabPageCourses.Controls.Add(this.textBoxAddSelectLecture);
+            this.tabPageCourses.Controls.Add(this.AddSelectStudyRoom);
+            this.tabPageCourses.Controls.Add(this.AddSelectLecture);
             this.tabPageCourses.Controls.Add(this.buttonAddCourse);
             this.tabPageCourses.Controls.Add(this.label3);
             this.tabPageCourses.Controls.Add(this.label2);
@@ -383,6 +378,7 @@
             this.buttonAddCourse.TabIndex = 13;
             this.buttonAddCourse.Text = "Добавить";
             this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
             // 
             // label3
             // 
@@ -430,21 +426,28 @@
             this.tabControlAdd.Size = new System.Drawing.Size(936, 508);
             this.tabControlAdd.TabIndex = 3;
             // 
-            // textBoxAddSelectLecture
+            // AddSelectLecture
             // 
-            this.textBoxAddSelectLecture.FormattingEnabled = true;
-            this.textBoxAddSelectLecture.Location = new System.Drawing.Point(289, 196);
-            this.textBoxAddSelectLecture.Name = "textBoxAddSelectLecture";
-            this.textBoxAddSelectLecture.Size = new System.Drawing.Size(184, 24);
-            this.textBoxAddSelectLecture.TabIndex = 14;
+            this.AddSelectLecture.FormattingEnabled = true;
+            this.AddSelectLecture.Location = new System.Drawing.Point(289, 196);
+            this.AddSelectLecture.Name = "AddSelectLecture";
+            this.AddSelectLecture.Size = new System.Drawing.Size(184, 24);
+            this.AddSelectLecture.TabIndex = 14;
             // 
-            // textBoxAddSelectStudyRoom
+            // dateTimePickerAddKlientDOB
             // 
-            textBoxAddSelectStudyRoom.FormattingEnabled = true;
-            textBoxAddSelectStudyRoom.Location = new System.Drawing.Point(289, 251);
-            textBoxAddSelectStudyRoom.Name = "textBoxAddSelectStudyRoom";
-            textBoxAddSelectStudyRoom.Size = new System.Drawing.Size(184, 24);
-            textBoxAddSelectStudyRoom.TabIndex = 15;
+            this.dateTimePickerAddKlientDOB.Location = new System.Drawing.Point(289, 212);
+            this.dateTimePickerAddKlientDOB.Name = "dateTimePickerAddKlientDOB";
+            this.dateTimePickerAddKlientDOB.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerAddKlientDOB.TabIndex = 16;
+            // 
+            // AddSelectStudyRoom
+            // 
+            this.AddSelectStudyRoom.FormattingEnabled = true;
+            this.AddSelectStudyRoom.Location = new System.Drawing.Point(289, 260);
+            this.AddSelectStudyRoom.Name = "AddSelectStudyRoom";
+            this.AddSelectStudyRoom.Size = new System.Drawing.Size(184, 24);
+            this.AddSelectStudyRoom.TabIndex = 15;
             // 
             // AddForm
             // 
@@ -495,7 +498,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxAddKlientDOB;
         private System.Windows.Forms.TextBox textBoxAddKlientName;
         private System.Windows.Forms.Button buttonAddLecturer;
         private System.Windows.Forms.Label label4;
@@ -513,6 +515,8 @@
         private System.Windows.Forms.TextBox textBoxAddStudyRoomsCabinet;
         private System.Windows.Forms.RadioButton radioButtonGenderWoman;
         private System.Windows.Forms.RadioButton radioButtonGenderMan;
-        private System.Windows.Forms.ComboBox textBoxAddSelectLecture;
+        private System.Windows.Forms.ComboBox AddSelectLecture;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAddKlientDOB;
+        private System.Windows.Forms.ComboBox AddSelectStudyRoom;
     }
 }
