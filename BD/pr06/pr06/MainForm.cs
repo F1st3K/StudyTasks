@@ -36,5 +36,12 @@ namespace pr06
             AddForm form = new AddForm();
             form.Show();
         }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditForm form = new EditForm();
+            form.Show();
+        }
     }
 }

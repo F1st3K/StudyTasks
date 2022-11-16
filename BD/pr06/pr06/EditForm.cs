@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace pr06
 {
-    public partial class AddForm : Form
+    public partial class EditForm : Form
     {
-        MySqlConnecter MySqlConnecter;
-        public AddForm()
+        public EditForm()
         {
             InitializeComponent();
-            const string connectionString = "host='localhost';database='mydb';uid='root';pwd='';";
-            MySqlConnecter = new MySqlConnecter(connectionString);
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)

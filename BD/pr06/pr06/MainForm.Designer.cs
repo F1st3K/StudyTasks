@@ -39,7 +39,7 @@
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.Size = new System.Drawing.Size(204, 48);
             this.ViewButton.TabIndex = 0;
-            this.ViewButton.Text = "Поиск\r\n";
+            this.ViewButton.Text = "Просмотр";
             this.ViewButton.UseVisualStyleBackColor = true;
             this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
@@ -62,13 +62,14 @@
             this.ChangeButton.Tag = "";
             this.ChangeButton.Text = "Редактироввние";
             this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(459, 587);
+            this.ClientSize = new System.Drawing.Size(457, 578);
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ViewButton);

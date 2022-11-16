@@ -37,7 +37,7 @@ namespace pr06
             string query = "SELECT * FROM courses;";
             try
             {
-                GridViewForView.DataSource =  MySqlConnecter.ReturnQueryTable(query);
+                dataGridView.DataSource =  MySqlConnecter.ReturnQueryTable(query);
             }
             catch (Exception ex)
             {
@@ -50,7 +50,7 @@ namespace pr06
             string query = "SELECT * FROM lecturers;";
             try
             {
-                GridViewForView.DataSource = MySqlConnecter.ReturnQueryTable(query);
+                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace pr06
             string query = "SELECT * FROM klients;";
             try
             {
-                GridViewForView.DataSource = MySqlConnecter.ReturnQueryTable(query);
+                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace pr06
             string query = "SELECT * FROM studyrooms;";
             try
             {
-                GridViewForView.DataSource = MySqlConnecter.ReturnQueryTable(query);
+                dataGridView.DataSource = MySqlConnecter.ReturnQueryTable(query);
             }
             catch (Exception ex)
             {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GridViewForView = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,18 +37,18 @@
             this.lecturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studyRoomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewForView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GridViewForView
+            // dataGridView
             // 
-            this.GridViewForView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewForView.Location = new System.Drawing.Point(13, 30);
-            this.GridViewForView.Name = "GridViewForView";
-            this.GridViewForView.RowHeadersWidth = 51;
-            this.GridViewForView.Size = new System.Drawing.Size(680, 400);
-            this.GridViewForView.TabIndex = 0;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(13, 30);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.Size = new System.Drawing.Size(680, 400);
+            this.dataGridView.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -67,14 +67,14 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
-            this.editToolStripMenuItem.Text = "edit";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
+            this.editToolStripMenuItem.Text = "Навигация";
             // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
-            this.backToolStripMenuItem.Text = "back";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.backToolStripMenuItem.Text = "назад";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // tablesToolStripMenuItem
@@ -85,35 +85,35 @@
             this.clientsToolStripMenuItem,
             this.studyRoomsToolStripMenuItem});
             this.tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
-            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.tablesToolStripMenuItem.Text = "Tables";
+            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.tablesToolStripMenuItem.Text = "Таблицы";
             // 
             // coursesToolStripMenuItem
             // 
             this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
             this.coursesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.coursesToolStripMenuItem.Text = "Courses";
+            this.coursesToolStripMenuItem.Text = "Курсы";
             this.coursesToolStripMenuItem.Click += new System.EventHandler(this.coursesToolStripMenuItem_Click);
             // 
             // lecturesToolStripMenuItem
             // 
             this.lecturesToolStripMenuItem.Name = "lecturesToolStripMenuItem";
             this.lecturesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.lecturesToolStripMenuItem.Text = "Lecturers";
+            this.lecturesToolStripMenuItem.Text = "Лектора";
             this.lecturesToolStripMenuItem.Click += new System.EventHandler(this.lecturesToolStripMenuItem_Click);
             // 
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
             this.clientsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.clientsToolStripMenuItem.Text = "Clients";
+            this.clientsToolStripMenuItem.Text = "Клиенты";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
             // studyRoomsToolStripMenuItem
             // 
             this.studyRoomsToolStripMenuItem.Name = "studyRoomsToolStripMenuItem";
             this.studyRoomsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.studyRoomsToolStripMenuItem.Text = "StudyRooms";
+            this.studyRoomsToolStripMenuItem.Text = "Помещения";
             this.studyRoomsToolStripMenuItem.Click += new System.EventHandler(this.studyRoomsToolStripMenuItem_Click);
             // 
             // ViewForm
@@ -122,7 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(702, 433);
-            this.Controls.Add(this.GridViewForView);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -133,7 +133,7 @@
             this.Name = "ViewForm";
             this.Text = "ViewForm";
             this.Load += new System.EventHandler(this.ViewForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewForView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -143,7 +143,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GridViewForView;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
