@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox textBoxChangeSelectStudyRoom;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tabControlAdd = new System.Windows.Forms.TabControl();
             this.tabPageCourses = new System.Windows.Forms.TabPage();
-            this.textBoxChangeSelectLecture = new System.Windows.Forms.ComboBox();
             this.buttonChangeCourse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxChangeKlientDOB = new System.Windows.Forms.TextBox();
             this.textBoxChangeKlientName = new System.Windows.Forms.TextBox();
             this.tabPageStudyRooms = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
@@ -68,7 +65,9 @@
             this.textBoxChangeStudyRoomsStreet = new System.Windows.Forms.TextBox();
             this.textBoxChangeStudyRoomsStructure = new System.Windows.Forms.TextBox();
             this.textBoxChangeStudyRoomsCity = new System.Windows.Forms.TextBox();
-            textBoxChangeSelectStudyRoom = new System.Windows.Forms.ComboBox();
+            this.comboBoxChangeSelectLecturer = new System.Windows.Forms.ComboBox();
+            this.comboBoxChangeSelectStudyRoom = new System.Windows.Forms.ComboBox();
+            this.DatePickerChangeKlientDOB = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControlAdd.SuspendLayout();
@@ -77,14 +76,6 @@
             this.tabPageKlients.SuspendLayout();
             this.tabPageStudyRooms.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBoxChangeSelectStudyRoom
-            // 
-            textBoxChangeSelectStudyRoom.FormattingEnabled = true;
-            textBoxChangeSelectStudyRoom.Location = new System.Drawing.Point(8, 134);
-            textBoxChangeSelectStudyRoom.Name = "textBoxChangeSelectStudyRoom";
-            textBoxChangeSelectStudyRoom.Size = new System.Drawing.Size(184, 24);
-            textBoxChangeSelectStudyRoom.TabIndex = 15;
             // 
             // menuStrip1
             // 
@@ -121,6 +112,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(936, 258);
             this.dataGridView.TabIndex = 6;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // tabControlAdd
             // 
@@ -133,11 +125,12 @@
             this.tabControlAdd.SelectedIndex = 0;
             this.tabControlAdd.Size = new System.Drawing.Size(936, 247);
             this.tabControlAdd.TabIndex = 7;
+            this.tabControlAdd.SelectedIndexChanged += new System.EventHandler(this.tabControlAdd_SelectedIndexChanged);
             // 
             // tabPageCourses
             // 
-            this.tabPageCourses.Controls.Add(textBoxChangeSelectStudyRoom);
-            this.tabPageCourses.Controls.Add(this.textBoxChangeSelectLecture);
+            this.tabPageCourses.Controls.Add(this.comboBoxChangeSelectStudyRoom);
+            this.tabPageCourses.Controls.Add(this.comboBoxChangeSelectLecturer);
             this.tabPageCourses.Controls.Add(this.buttonChangeCourse);
             this.tabPageCourses.Controls.Add(this.label3);
             this.tabPageCourses.Controls.Add(this.label2);
@@ -150,14 +143,6 @@
             this.tabPageCourses.TabIndex = 0;
             this.tabPageCourses.Text = "Курсы";
             this.tabPageCourses.UseVisualStyleBackColor = true;
-            // 
-            // textBoxChangeSelectLecture
-            // 
-            this.textBoxChangeSelectLecture.FormattingEnabled = true;
-            this.textBoxChangeSelectLecture.Location = new System.Drawing.Point(8, 79);
-            this.textBoxChangeSelectLecture.Name = "textBoxChangeSelectLecture";
-            this.textBoxChangeSelectLecture.Size = new System.Drawing.Size(184, 24);
-            this.textBoxChangeSelectLecture.TabIndex = 14;
             // 
             // buttonChangeCourse
             // 
@@ -278,13 +263,13 @@
             // 
             // tabPageKlients
             // 
+            this.tabPageKlients.Controls.Add(this.DatePickerChangeKlientDOB);
             this.tabPageKlients.Controls.Add(this.radioButtonChangeGenderWoman);
             this.tabPageKlients.Controls.Add(this.radioButtonChangeGenderMan);
             this.tabPageKlients.Controls.Add(this.buttonChangeKlient);
             this.tabPageKlients.Controls.Add(this.label7);
             this.tabPageKlients.Controls.Add(this.label8);
             this.tabPageKlients.Controls.Add(this.label9);
-            this.tabPageKlients.Controls.Add(this.textBoxChangeKlientDOB);
             this.tabPageKlients.Controls.Add(this.textBoxChangeKlientName);
             this.tabPageKlients.Location = new System.Drawing.Point(4, 25);
             this.tabPageKlients.Name = "tabPageKlients";
@@ -351,13 +336,6 @@
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 10;
             this.label9.Text = "ФИО: ";
-            // 
-            // textBoxChangeKlientDOB
-            // 
-            this.textBoxChangeKlientDOB.Location = new System.Drawing.Point(4, 79);
-            this.textBoxChangeKlientDOB.Name = "textBoxChangeKlientDOB";
-            this.textBoxChangeKlientDOB.Size = new System.Drawing.Size(350, 22);
-            this.textBoxChangeKlientDOB.TabIndex = 9;
             // 
             // textBoxChangeKlientName
             // 
@@ -458,6 +436,29 @@
             this.textBoxChangeStudyRoomsCity.Size = new System.Drawing.Size(350, 22);
             this.textBoxChangeStudyRoomsCity.TabIndex = 7;
             // 
+            // comboBoxChangeSelectLecturer
+            // 
+            this.comboBoxChangeSelectLecturer.FormattingEnabled = true;
+            this.comboBoxChangeSelectLecturer.Location = new System.Drawing.Point(11, 80);
+            this.comboBoxChangeSelectLecturer.Name = "comboBoxChangeSelectLecturer";
+            this.comboBoxChangeSelectLecturer.Size = new System.Drawing.Size(181, 24);
+            this.comboBoxChangeSelectLecturer.TabIndex = 16;
+            // 
+            // comboBoxChangeSelectStudyRoom
+            // 
+            this.comboBoxChangeSelectStudyRoom.FormattingEnabled = true;
+            this.comboBoxChangeSelectStudyRoom.Location = new System.Drawing.Point(11, 144);
+            this.comboBoxChangeSelectStudyRoom.Name = "comboBoxChangeSelectStudyRoom";
+            this.comboBoxChangeSelectStudyRoom.Size = new System.Drawing.Size(181, 24);
+            this.comboBoxChangeSelectStudyRoom.TabIndex = 17;
+            // 
+            // DatePickerChangeKlientDOB
+            // 
+            this.DatePickerChangeKlientDOB.Location = new System.Drawing.Point(4, 80);
+            this.DatePickerChangeKlientDOB.Name = "DatePickerChangeKlientDOB";
+            this.DatePickerChangeKlientDOB.Size = new System.Drawing.Size(200, 22);
+            this.DatePickerChangeKlientDOB.TabIndex = 16;
+            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,6 +473,7 @@
             this.MinimumSize = new System.Drawing.Size(954, 580);
             this.Name = "EditForm";
             this.Text = "EditForm";
+            this.Load += new System.EventHandler(this.EditForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -496,7 +498,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TabControl tabControlAdd;
         private System.Windows.Forms.TabPage tabPageCourses;
-        private System.Windows.Forms.ComboBox textBoxChangeSelectLecture;
         private System.Windows.Forms.Button buttonChangeCourse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -517,7 +518,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxChangeKlientDOB;
         private System.Windows.Forms.TextBox textBoxChangeKlientName;
         private System.Windows.Forms.TabPage tabPageStudyRooms;
         private System.Windows.Forms.Label label13;
@@ -529,5 +529,8 @@
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsStreet;
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsStructure;
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsCity;
+        private System.Windows.Forms.ComboBox comboBoxChangeSelectStudyRoom;
+        private System.Windows.Forms.ComboBox comboBoxChangeSelectLecturer;
+        private System.Windows.Forms.DateTimePicker DatePickerChangeKlientDOB;
     }
 }
