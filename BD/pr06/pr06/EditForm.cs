@@ -14,7 +14,7 @@ namespace pr06
     public partial class EditForm : Form
     {
         private MySqlConnecter MySqlConnecter;
-        private DataGridViewRow _currentRow;
+        private DataGridViewRow currentRow;
         public EditForm()
         {
             InitializeComponent();
@@ -56,8 +56,8 @@ namespace pr06
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            _currentRow = dataGridView.Rows[dataGridView.CurrentCell.RowIndex];
-            _currentRow.Selected = true;
+            currentRow = dataGridView.Rows[dataGridView.CurrentCell.RowIndex];
+            currentRow.Selected = true;
             switch (tabControlAdd.SelectedIndex)
             {
                 case 0: GetDataFromTableCourses(); break;
@@ -70,30 +70,30 @@ namespace pr06
         }
         private void GetDataFromTableCourses()
         {
-            textBoxChangeCourseName.Text = _currentRow.Cells[1].Value.ToString();
-            ChangeSelectStudyRoom.Text = _currentRow.Cells[2].Value.ToString();
-            ChangeSelectLecturer.Text = _currentRow.Cells[3].Value.ToString();
+            textBoxChangeCourseName.Text = currentRow.Cells[1].Value.ToString();
+            ChangeSelectStudyRoom.Text = currentRow.Cells[2].Value.ToString();
+            ChangeSelectLecturer.Text = currentRow.Cells[3].Value.ToString();
         }
         private void GetDataFromTableLecturers()
         {
-            textBoxChangeLectureName.Text = _currentRow.Cells[1].Value.ToString();
-            textBoxChangeLectureEdic.Text = _currentRow.Cells[2].Value.ToString();
-            textBoxChangeLectureSpec.Text = _currentRow.Cells[3].Value.ToString();
+            textBoxChangeLectureName.Text = currentRow.Cells[1].Value.ToString();
+            textBoxChangeLectureEdic.Text = currentRow.Cells[2].Value.ToString();
+            textBoxChangeLectureSpec.Text = currentRow.Cells[3].Value.ToString();
         }
         private void GetDataFromTableKlients()
         {
-            textBoxChangeKlientName.Text = _currentRow.Cells[1].Value.ToString();
-            dateTimePickerChangeKlientDOB.Text = _currentRow.Cells[2].Value.ToString();
-            if(_currentRow.Cells[3].Value.ToString() == "муж")
+            textBoxChangeKlientName.Text = currentRow.Cells[1].Value.ToString();
+            dateTimePickerChangeKlientDOB.Text = currentRow.Cells[2].Value.ToString();
+            if(currentRow.Cells[3].Value.ToString() == "муж")
                 radioButtonGenderMan.Select();
             else radioButtonGenderWoman.Select();
         }
         private void GetDataFromTableStudyRooms()
         {
-            textBoxChangeStudyRoomsCity.Text = _currentRow.Cells[1].Value.ToString();
-            textBoxChangeStudyRoomsStreet.Text = _currentRow.Cells[2].Value.ToString();
-            textBoxChangeStudyRoomsStructure.Text = _currentRow.Cells[3].Value.ToString();
-            textBoxChangeStudyRoomsCabinet.Text = _currentRow.Cells[4].Value.ToString();
+            textBoxChangeStudyRoomsCity.Text = currentRow.Cells[1].Value.ToString();
+            textBoxChangeStudyRoomsStreet.Text = currentRow.Cells[2].Value.ToString();
+            textBoxChangeStudyRoomsStructure.Text = currentRow.Cells[3].Value.ToString();
+            textBoxChangeStudyRoomsCabinet.Text = currentRow.Cells[4].Value.ToString();
         }
         private void ResetAll()
         {
@@ -115,10 +115,10 @@ namespace pr06
         private void buttonChangeCourse_Click(object sender, EventArgs e)
         {
             string table = "Courses";
-            string values = $" {_currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeCourseName.Text}', " +
-                $"{_currentRow.Cells[2].OwningColumn.Name} = '{ChangeSelectLecturer.Text}', " +
-                $"{_currentRow.Cells[3].OwningColumn.Name} = '{ChangeSelectStudyRoom.Text}'";
-            string condition = $"{_currentRow.Cells[0].OwningColumn.Name} = {_currentRow.Cells[0].Value.ToString()}";
+            string values = $" {currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeCourseName.Text}', " +
+                $"{currentRow.Cells[2].OwningColumn.Name} = '{ChangeSelectLecturer.Text}', " +
+                $"{currentRow.Cells[3].OwningColumn.Name} = '{ChangeSelectStudyRoom.Text}'";
+            string condition = $"{currentRow.Cells[0].OwningColumn.Name} = {currentRow.Cells[0].Value.ToString()}";
             MySqlConnecter.QueryChangeInTable(table, values, condition);
             UpdateGridView();
             ResetAll();
@@ -127,10 +127,10 @@ namespace pr06
         private void buttonChangeLecturer_Click(object sender, EventArgs e)
         {
             string table = "Lecturers";
-            string values = $" {_currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeLectureName.Text}', " +
-                $"{_currentRow.Cells[2].OwningColumn.Name} = '{textBoxChangeLectureEdic.Text}', " +
-                $"{_currentRow.Cells[3].OwningColumn.Name} = '{textBoxChangeLectureSpec.Text}'";
-            string condition = $"{_currentRow.Cells[0].OwningColumn.Name} = {_currentRow.Cells[0].Value.ToString()}";
+            string values = $" {currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeLectureName.Text}', " +
+                $"{currentRow.Cells[2].OwningColumn.Name} = '{textBoxChangeLectureEdic.Text}', " +
+                $"{currentRow.Cells[3].OwningColumn.Name} = '{textBoxChangeLectureSpec.Text}'";
+            string condition = $"{currentRow.Cells[0].OwningColumn.Name} = {currentRow.Cells[0].Value.ToString()}";
             MySqlConnecter.QueryChangeInTable(table, values, condition);
             UpdateGridView();
             ResetAll();
@@ -140,10 +140,10 @@ namespace pr06
         {
             int gender = radioButtonGenderMan.Checked ? 1 : 2;
             string table = "Klients";
-            string values = $" {_currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeKlientName.Text}', " +
-                $"{_currentRow.Cells[2].OwningColumn.Name} = '{dateTimePickerChangeKlientDOB.Value.ToString("yyyy-MM-dd")}', " +
-                $"{_currentRow.Cells[3].OwningColumn.Name} = {gender}";
-            string condition = $"{_currentRow.Cells[0].OwningColumn.Name} = {_currentRow.Cells[0].Value.ToString()}";
+            string values = $" {currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeKlientName.Text}', " +
+                $"{currentRow.Cells[2].OwningColumn.Name} = '{dateTimePickerChangeKlientDOB.Value.ToString("yyyy-MM-dd")}', " +
+                $"{currentRow.Cells[3].OwningColumn.Name} = {gender}";
+            string condition = $"{currentRow.Cells[0].OwningColumn.Name} = {currentRow.Cells[0].Value.ToString()}";
             MySqlConnecter.QueryChangeInTable(table, values, condition);
             UpdateGridView();
             ResetAll();
@@ -152,11 +152,11 @@ namespace pr06
         private void buttonChangeStudyRoom_Click(object sender, EventArgs e)
         {
             string table = "StudyRooms";
-            string values = $" {_currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeStudyRoomsCity.Text}', " +
-                $"{_currentRow.Cells[2].OwningColumn.Name} = '{textBoxChangeStudyRoomsStreet.Text}', " +
-                $"{_currentRow.Cells[3].OwningColumn.Name} = {textBoxChangeStudyRoomsStructure.Text}, " +
-                $"{_currentRow.Cells[4].OwningColumn.Name} = {textBoxChangeStudyRoomsCabinet.Text}";
-            string condition = $"{_currentRow.Cells[0].OwningColumn.Name} = {_currentRow.Cells[0].Value.ToString()}";
+            string values = $" {currentRow.Cells[1].OwningColumn.Name} = '{textBoxChangeStudyRoomsCity.Text}', " +
+                $"{currentRow.Cells[2].OwningColumn.Name} = '{textBoxChangeStudyRoomsStreet.Text}', " +
+                $"{currentRow.Cells[3].OwningColumn.Name} = {textBoxChangeStudyRoomsStructure.Text}, " +
+                $"{currentRow.Cells[4].OwningColumn.Name} = {textBoxChangeStudyRoomsCabinet.Text}";
+            string condition = $"{currentRow.Cells[0].OwningColumn.Name} = {currentRow.Cells[0].Value.ToString()}";
             MySqlConnecter.QueryChangeInTable(table, values, condition);
             UpdateGridView();
             ResetAll();

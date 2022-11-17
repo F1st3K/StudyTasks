@@ -31,6 +31,7 @@
             this.ViewButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.ChangeButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ViewButton
@@ -64,12 +65,23 @@
             this.ChangeButton.UseVisualStyleBackColor = true;
             this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(126, 355);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(204, 48);
+            this.DeleteButton.TabIndex = 3;
+            this.DeleteButton.Text = "Удаление";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(457, 578);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ViewButton);
@@ -91,6 +103,7 @@
         private System.Windows.Forms.Button ViewButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button ChangeButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 

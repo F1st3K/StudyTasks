@@ -34,3 +34,4 @@ C:\Users\-F1st3k\source\repos\StudyTasks\BD\pr06\pr06\bin\Debug\MySql.Data.xml
 C:\Users\-F1st3k\source\repos\StudyTasks\BD\pr06\pr06\obj\Debug\pr06.exe.config
 C:\Users\-F1st3k\source\repos\StudyTasks\BD\pr06\pr06\obj\Debug\pr06.csproj.CopyComplete
 C:\Users\-F1st3k\source\repos\StudyTasks\BD\pr06\pr06\obj\Debug\pr06.EditForm.resources
+C:\Users\-F1st3k\source\repos\StudyTasks\BD\pr06\pr06\obj\Debug\pr06.DelForm.resources

@@ -43,5 +43,12 @@ namespace pr06
             EditForm form = new EditForm();
             form.Show();
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DelForm form = new DelForm();
+            form.Show();
+        }
     }
 }
