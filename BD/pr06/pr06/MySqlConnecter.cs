@@ -54,5 +54,20 @@ namespace pr06
             }
             _dbConection.Close();
         }
+        public void QueryChangeInTable(string table, string values, string condition)
+        {
+            string query = $"UPDATE {table} SET {values} WHERE {condition};";
+            _dbConection.Open();
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, _dbConection);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + query, "Внимание!" + " - некоректное имя!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            _dbConection.Close();
+        }
     }
 }

@@ -30,8 +30,8 @@ namespace pr06
         {
             textBoxAddKlientName.ResetText();
             dateTimePickerAddKlientDOB.ResetText();
-            radioButtonGenderMan.ResetText();
-            radioButtonGenderWoman.ResetText();
+            radioButtonGenderMan.Checked = false;
+            radioButtonGenderWoman.Checked = false;
             textBoxAddCourseName.ResetText();
             AddSelectLecture.ResetText();
             AddSelectStudyRoom.ResetText();
@@ -47,7 +47,7 @@ namespace pr06
         {
             int gender = radioButtonGenderMan.Checked ? 1 : 2;
             string table = "klients";
-            string values = $"DEFAULT, '{textBoxAddKlientName.Text}', '{dateTimePickerAddKlientDOB.Value.ToShortDateString()}', {gender}";
+            string values = $"DEFAULT, '{textBoxAddKlientName.Text}', '{dateTimePickerAddKlientDOB.Value.ToString("yyyy-MM-dd")}', {gender}";
             MySqlConnecter.QueryAddInTable(table, values);
             ResetAll();
         }

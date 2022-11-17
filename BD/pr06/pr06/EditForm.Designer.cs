@@ -34,6 +34,8 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tabControlAdd = new System.Windows.Forms.TabControl();
             this.tabPageCourses = new System.Windows.Forms.TabPage();
+            this.ChangeSelectStudyRoom = new System.Windows.Forms.ComboBox();
+            this.ChangeSelectLecturer = new System.Windows.Forms.ComboBox();
             this.buttonChangeCourse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,8 +50,9 @@
             this.textBoxChangeLectureSpec = new System.Windows.Forms.TextBox();
             this.textBoxChangeLectureName = new System.Windows.Forms.TextBox();
             this.tabPageKlients = new System.Windows.Forms.TabPage();
-            this.radioButtonChangeGenderWoman = new System.Windows.Forms.RadioButton();
-            this.radioButtonChangeGenderMan = new System.Windows.Forms.RadioButton();
+            this.dateTimePickerChangeKlientDOB = new System.Windows.Forms.DateTimePicker();
+            this.radioButtonGenderWoman = new System.Windows.Forms.RadioButton();
+            this.radioButtonGenderMan = new System.Windows.Forms.RadioButton();
             this.buttonChangeKlient = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,9 +68,6 @@
             this.textBoxChangeStudyRoomsStreet = new System.Windows.Forms.TextBox();
             this.textBoxChangeStudyRoomsStructure = new System.Windows.Forms.TextBox();
             this.textBoxChangeStudyRoomsCity = new System.Windows.Forms.TextBox();
-            this.comboBoxChangeSelectLecturer = new System.Windows.Forms.ComboBox();
-            this.comboBoxChangeSelectStudyRoom = new System.Windows.Forms.ComboBox();
-            this.DatePickerChangeKlientDOB = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControlAdd.SuspendLayout();
@@ -108,6 +108,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 32);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(936, 258);
@@ -129,8 +130,8 @@
             // 
             // tabPageCourses
             // 
-            this.tabPageCourses.Controls.Add(this.comboBoxChangeSelectStudyRoom);
-            this.tabPageCourses.Controls.Add(this.comboBoxChangeSelectLecturer);
+            this.tabPageCourses.Controls.Add(this.ChangeSelectStudyRoom);
+            this.tabPageCourses.Controls.Add(this.ChangeSelectLecturer);
             this.tabPageCourses.Controls.Add(this.buttonChangeCourse);
             this.tabPageCourses.Controls.Add(this.label3);
             this.tabPageCourses.Controls.Add(this.label2);
@@ -144,6 +145,22 @@
             this.tabPageCourses.Text = "Курсы";
             this.tabPageCourses.UseVisualStyleBackColor = true;
             // 
+            // ChangeSelectStudyRoom
+            // 
+            this.ChangeSelectStudyRoom.FormattingEnabled = true;
+            this.ChangeSelectStudyRoom.Location = new System.Drawing.Point(11, 144);
+            this.ChangeSelectStudyRoom.Name = "ChangeSelectStudyRoom";
+            this.ChangeSelectStudyRoom.Size = new System.Drawing.Size(181, 24);
+            this.ChangeSelectStudyRoom.TabIndex = 17;
+            // 
+            // ChangeSelectLecturer
+            // 
+            this.ChangeSelectLecturer.FormattingEnabled = true;
+            this.ChangeSelectLecturer.Location = new System.Drawing.Point(11, 80);
+            this.ChangeSelectLecturer.Name = "ChangeSelectLecturer";
+            this.ChangeSelectLecturer.Size = new System.Drawing.Size(181, 24);
+            this.ChangeSelectLecturer.TabIndex = 16;
+            // 
             // buttonChangeCourse
             // 
             this.buttonChangeCourse.Location = new System.Drawing.Point(221, 101);
@@ -152,6 +169,7 @@
             this.buttonChangeCourse.TabIndex = 13;
             this.buttonChangeCourse.Text = "Редактировать";
             this.buttonChangeCourse.UseVisualStyleBackColor = true;
+            this.buttonChangeCourse.Click += new System.EventHandler(this.buttonChangeCourse_Click);
             // 
             // label3
             // 
@@ -212,6 +230,7 @@
             this.buttonChangeLecturer.TabIndex = 13;
             this.buttonChangeLecturer.Text = "Редактировать";
             this.buttonChangeLecturer.UseVisualStyleBackColor = true;
+            this.buttonChangeLecturer.Click += new System.EventHandler(this.buttonChangeLecturer_Click);
             // 
             // label4
             // 
@@ -263,9 +282,9 @@
             // 
             // tabPageKlients
             // 
-            this.tabPageKlients.Controls.Add(this.DatePickerChangeKlientDOB);
-            this.tabPageKlients.Controls.Add(this.radioButtonChangeGenderWoman);
-            this.tabPageKlients.Controls.Add(this.radioButtonChangeGenderMan);
+            this.tabPageKlients.Controls.Add(this.dateTimePickerChangeKlientDOB);
+            this.tabPageKlients.Controls.Add(this.radioButtonGenderWoman);
+            this.tabPageKlients.Controls.Add(this.radioButtonGenderMan);
             this.tabPageKlients.Controls.Add(this.buttonChangeKlient);
             this.tabPageKlients.Controls.Add(this.label7);
             this.tabPageKlients.Controls.Add(this.label8);
@@ -279,27 +298,34 @@
             this.tabPageKlients.Text = "Клиенты";
             this.tabPageKlients.UseVisualStyleBackColor = true;
             // 
-            // radioButtonChangeGenderWoman
+            // dateTimePickerChangeKlientDOB
             // 
-            this.radioButtonChangeGenderWoman.AutoSize = true;
-            this.radioButtonChangeGenderWoman.Location = new System.Drawing.Point(155, 136);
-            this.radioButtonChangeGenderWoman.Name = "radioButtonChangeGenderWoman";
-            this.radioButtonChangeGenderWoman.Size = new System.Drawing.Size(56, 20);
-            this.radioButtonChangeGenderWoman.TabIndex = 15;
-            this.radioButtonChangeGenderWoman.TabStop = true;
-            this.radioButtonChangeGenderWoman.Text = "жен.";
-            this.radioButtonChangeGenderWoman.UseVisualStyleBackColor = true;
+            this.dateTimePickerChangeKlientDOB.Location = new System.Drawing.Point(4, 80);
+            this.dateTimePickerChangeKlientDOB.Name = "dateTimePickerChangeKlientDOB";
+            this.dateTimePickerChangeKlientDOB.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerChangeKlientDOB.TabIndex = 16;
             // 
-            // radioButtonChangeGenderMan
+            // radioButtonGenderWoman
             // 
-            this.radioButtonChangeGenderMan.AutoSize = true;
-            this.radioButtonChangeGenderMan.Location = new System.Drawing.Point(73, 136);
-            this.radioButtonChangeGenderMan.Name = "radioButtonChangeGenderMan";
-            this.radioButtonChangeGenderMan.Size = new System.Drawing.Size(57, 20);
-            this.radioButtonChangeGenderMan.TabIndex = 14;
-            this.radioButtonChangeGenderMan.TabStop = true;
-            this.radioButtonChangeGenderMan.Text = "муж.";
-            this.radioButtonChangeGenderMan.UseVisualStyleBackColor = true;
+            this.radioButtonGenderWoman.AutoSize = true;
+            this.radioButtonGenderWoman.Location = new System.Drawing.Point(144, 136);
+            this.radioButtonGenderWoman.Name = "radioButtonGenderWoman";
+            this.radioButtonGenderWoman.Size = new System.Drawing.Size(56, 20);
+            this.radioButtonGenderWoman.TabIndex = 15;
+            this.radioButtonGenderWoman.TabStop = true;
+            this.radioButtonGenderWoman.Text = "жен.";
+            this.radioButtonGenderWoman.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonGenderMan
+            // 
+            this.radioButtonGenderMan.AutoSize = true;
+            this.radioButtonGenderMan.Location = new System.Drawing.Point(61, 136);
+            this.radioButtonGenderMan.Name = "radioButtonGenderMan";
+            this.radioButtonGenderMan.Size = new System.Drawing.Size(57, 20);
+            this.radioButtonGenderMan.TabIndex = 14;
+            this.radioButtonGenderMan.TabStop = true;
+            this.radioButtonGenderMan.Text = "муж.";
+            this.radioButtonGenderMan.UseVisualStyleBackColor = true;
             // 
             // buttonChangeKlient
             // 
@@ -309,6 +335,7 @@
             this.buttonChangeKlient.TabIndex = 13;
             this.buttonChangeKlient.Text = "Редактировать";
             this.buttonChangeKlient.UseVisualStyleBackColor = true;
+            this.buttonChangeKlient.Click += new System.EventHandler(this.buttonChangeKlient_Click);
             // 
             // label7
             // 
@@ -387,6 +414,7 @@
             this.buttonChangeStudyRoom.TabIndex = 13;
             this.buttonChangeStudyRoom.Text = "Редактировать";
             this.buttonChangeStudyRoom.UseVisualStyleBackColor = true;
+            this.buttonChangeStudyRoom.Click += new System.EventHandler(this.buttonChangeStudyRoom_Click);
             // 
             // label10
             // 
@@ -435,29 +463,6 @@
             this.textBoxChangeStudyRoomsCity.Name = "textBoxChangeStudyRoomsCity";
             this.textBoxChangeStudyRoomsCity.Size = new System.Drawing.Size(350, 22);
             this.textBoxChangeStudyRoomsCity.TabIndex = 7;
-            // 
-            // comboBoxChangeSelectLecturer
-            // 
-            this.comboBoxChangeSelectLecturer.FormattingEnabled = true;
-            this.comboBoxChangeSelectLecturer.Location = new System.Drawing.Point(11, 80);
-            this.comboBoxChangeSelectLecturer.Name = "comboBoxChangeSelectLecturer";
-            this.comboBoxChangeSelectLecturer.Size = new System.Drawing.Size(181, 24);
-            this.comboBoxChangeSelectLecturer.TabIndex = 16;
-            // 
-            // comboBoxChangeSelectStudyRoom
-            // 
-            this.comboBoxChangeSelectStudyRoom.FormattingEnabled = true;
-            this.comboBoxChangeSelectStudyRoom.Location = new System.Drawing.Point(11, 144);
-            this.comboBoxChangeSelectStudyRoom.Name = "comboBoxChangeSelectStudyRoom";
-            this.comboBoxChangeSelectStudyRoom.Size = new System.Drawing.Size(181, 24);
-            this.comboBoxChangeSelectStudyRoom.TabIndex = 17;
-            // 
-            // DatePickerChangeKlientDOB
-            // 
-            this.DatePickerChangeKlientDOB.Location = new System.Drawing.Point(4, 80);
-            this.DatePickerChangeKlientDOB.Name = "DatePickerChangeKlientDOB";
-            this.DatePickerChangeKlientDOB.Size = new System.Drawing.Size(200, 22);
-            this.DatePickerChangeKlientDOB.TabIndex = 16;
             // 
             // EditForm
             // 
@@ -512,8 +517,8 @@
         private System.Windows.Forms.TextBox textBoxChangeLectureSpec;
         private System.Windows.Forms.TextBox textBoxChangeLectureName;
         private System.Windows.Forms.TabPage tabPageKlients;
-        private System.Windows.Forms.RadioButton radioButtonChangeGenderWoman;
-        private System.Windows.Forms.RadioButton radioButtonChangeGenderMan;
+        private System.Windows.Forms.RadioButton radioButtonGenderWoman;
+        private System.Windows.Forms.RadioButton radioButtonGenderMan;
         private System.Windows.Forms.Button buttonChangeKlient;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -529,8 +534,8 @@
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsStreet;
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsStructure;
         private System.Windows.Forms.TextBox textBoxChangeStudyRoomsCity;
-        private System.Windows.Forms.ComboBox comboBoxChangeSelectStudyRoom;
-        private System.Windows.Forms.ComboBox comboBoxChangeSelectLecturer;
-        private System.Windows.Forms.DateTimePicker DatePickerChangeKlientDOB;
+        private System.Windows.Forms.ComboBox ChangeSelectStudyRoom;
+        private System.Windows.Forms.ComboBox ChangeSelectLecturer;
+        private System.Windows.Forms.DateTimePicker dateTimePickerChangeKlientDOB;
     }
 }
