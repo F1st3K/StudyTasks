@@ -69,5 +69,20 @@ namespace pr06
             }
             _dbConection.Close();
         }
+        public void QueryDeleteInTable(string table, string condition)
+        {
+            string query = $"DELETE FROM {table} WHERE {condition};";
+            _dbConection.Open();
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, _dbConection);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + query, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            _dbConection.Close();
+        }
     }
 }

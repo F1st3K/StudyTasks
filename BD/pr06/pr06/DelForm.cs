@@ -15,6 +15,7 @@ namespace pr06
     {
         private MySqlConnecter MySqlConnecter;
         private DataGridViewRow currentRow;
+        private string _tableName;
         public DelForm()
         {
             InitializeComponent();
@@ -31,26 +32,26 @@ namespace pr06
 
         private void coursesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tableName = "courses";
-            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
+            _tableName = "courses";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(_tableName);
         }
 
         private void lecturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tableName = "lecturers";
-            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
+            _tableName = "lecturers";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(_tableName);
         }
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tableName = "klients";
-            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
+            _tableName = "klients";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(_tableName);
         }
 
         private void studyRoomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tableName = "studyrooms";
-            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(tableName);
+            _tableName = "studyrooms";
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(_tableName);
         }
 
         private void DelForm_Load(object sender, EventArgs e)
@@ -71,7 +72,17 @@ namespace pr06
             for (int i = 0; i < dataGridView.Columns.Count; i++) row += "\t" + currentRow.Cells[i].Value.ToString();
             DialogResult dialogResult = MessageBox.Show($"Вы действительно хотите удалить следующую запись?: \n{row}", "Внимание! УДАЛЕНИЕ!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (dialogResult == DialogResult.Yes)
-                ;
+                DeleteRow();
+        }
+        private void DeleteRow()
+        {
+            string condition = $"{currentRow.Cells[0].OwningColumn.Name} = {currentRow.Cells[0].Value.ToString()}";
+            MySqlConnecter.QueryDeleteInTable(_tableName, condition);
+            UpadateGridView();
+        }
+        private void UpadateGridView()
+        {
+            dataGridView.DataSource = MySqlConnecter.QueryReturnTable(_tableName);
         }
     }
 }
